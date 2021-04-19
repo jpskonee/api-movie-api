@@ -11,6 +11,7 @@ exports.getAllEntry = async (req, res) => {
    
     res.status(200).json(
         {
+            API_Description: "Get 5 Random Movies Each time your refesh this page",
             developer: "AGHO.DEV",
             report: true,
             Movie: randomMovie
