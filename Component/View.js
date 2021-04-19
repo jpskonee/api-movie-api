@@ -5,17 +5,18 @@ const People = require("./Model");
 
 
 exports.getAllEntry = async (req, res) => {
-    const persons = await People.find();
+    let persons = await People.find();
+
+    let randomMovie = persons.sort(() => .5 - Math.random()).slice(0,5)
+   
     res.status(200).json(
         {
             developer: "AGHO.DEV",
             report: true,
-            totalData: persons.length,
-            data: persons
+            Movie: randomMovie
         }
     );
 };
-
 
 exports.createEntry = async (req, res) => {
     const persons = await People.create(req.body);
